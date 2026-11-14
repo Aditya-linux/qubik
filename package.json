@@ -1,0 +1,44 @@
+{
+  "name": "qubik",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:assets": "node scripts/check-assets.mjs"
+  },
+  "dependencies": {
+    "@base-org/account": "^2.6.0",
+    "@coinbase/cdp-core": "latest",
+    "@coinbase/cdp-hooks": "latest",
+    "@coinbase/cdp-react": "latest",
+    "@coinbase/cdp-wagmi": "latest",
+    "@tanstack/react-query": "^5.90.2",
+    "@x402/evm": "^2.31.0",
+    "@x402/svm": "^2.31.0",
+    "motion": "^14.14.0",
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "viem": "^2.37.6",
+    "wagmi": "^2.17.5",
+    "x402-fetch": "^1.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "postcss": "^8.5.33",
+    "tailwindcss": "4.3.3",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}

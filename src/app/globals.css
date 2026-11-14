@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  /* Institutional cool neutrals — not cream/serif “AI” palette */
+  --canvas: #f3f4f6;
+  --surface: #ffffff;
+  --surface-muted: #eef0f3;
+  --ink: #0b1220;
+  --muted: #5b6472;
+  --line: #e2e5ea;
+  --line-strong: #c9ced6;
+  --accent: #0f766e;
+  --accent-hover: #0d9488;
+  --accent-soft: #ecfdf8;
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --danger: #b42318;
+  --danger-soft: #fef2f2;
+  --mono: var(--font-plex-mono);
+
+  /* Legacy aliases used across components */
+  --cream: var(--surface);
+  --cream-deep: var(--surface-muted);
+  --background: var(--canvas);
+  --foreground: var(--ink);
+  --radius: 6px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-plex-sans);
+  --font-display: var(--font-plex-sans);
+  --font-body: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background-color: var(--canvas);
+  background-image:
+    linear-gradient(to right, rgba(11, 18, 32, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 18, 32, 0.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  color: var(--ink);
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" on, "kern" on;
+  letter-spacing: -0.011em;
+  min-height: 100vh;
+}
+
+.font-display {
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.font-mono,
+.tabular {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.ui-panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.ui-btn-primary {
+  background: var(--ink);
+  color: #fff;
+}
+
+.ui-btn-primary:hover {
+  background: #1a2333;
+}
+
+.ui-btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ui-btn-accent:hover {
+  background: var(--accent-hover);
+}
+
+.ui-btn-secondary {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.ui-btn-secondary:hover {
+  background: var(--surface-muted);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
